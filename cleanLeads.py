@@ -1,10 +1,10 @@
 import ezsheets
 
 #import Lead Report Sheer (test)
-ss = ezsheets.Spreadsheet('1tCZLsVJ-tEz-5XF6SUpVGq--_SfGTSMvhHTFXlxAOpU')
+leadReport = ezsheets.Spreadsheet('1tCZLsVJ-tEz-5XF6SUpVGq--_SfGTSMvhHTFXlxAOpU')
 
 #import velocify spreadsheet with new leads
-ss2 = ezsheets.Spreadsheet('17tuRfAprY2_Mc_wn2PJinlqcVcHp6aO1M9e_66iH6j0')
+ss2 = ezsheets.Spreadsheet('1y1G9k_pucjlBXCL_UyvSTwws6OCcpqLrDl1sN7VAkHU')
 leads = ss2[0]
 rows = leads.getRows()
 
@@ -78,9 +78,9 @@ programsClean = ['Program']
 validRows = totalRows - invalidRows
 
 programs = columns[8]
-cosWords = ['Cosmetology', 'cosmetology', 'Makeup Training']
+cosWords = ['Cosmetology', 'cosmetology', 'Makeup Training', 'Barber Training']
 skinWords = ['Esthetics/Skin Care', 'Esthetics']
-nailWords = ['Nail Technology', 'Nail', 'Nail Technician']
+nailWords = ['Nail Technology', 'Nail', 'Nail Technician', 'Nails']
 otherWords = ['All Beauty Courses', '']
 i=0
 for entry in programs:
@@ -103,3 +103,15 @@ columns[10] = programsClean
 
 #Updates columns
 leads.updateColumns(columns)
+
+
+#moves Last week to 2 Week compressor
+leadReport = ezsheets.Spreadsheet('1tCZLsVJ-tEz-5XF6SUpVGq--_SfGTSMvhHTFXlxAOpU')
+lastWeekCompressor = leadReport[5]
+twoWeekCompressor = leadReport[6]
+
+lastWeekColumns = lastWeekCompressor.getColumns()
+date = lastWeekColumns[16]
+
+
+twoWeekColumns = twoWeekCompressor.getColumns()
