@@ -4,14 +4,14 @@ import ezsheets
 leadReport = ezsheets.Spreadsheet('1tCZLsVJ-tEz-5XF6SUpVGq--_SfGTSMvhHTFXlxAOpU')
 
 #import velocify spreadsheet with new leads
-ss2 = ezsheets.Spreadsheet('1y1G9k_pucjlBXCL_UyvSTwws6OCcpqLrDl1sN7VAkHU')
+ss2 = ezsheets.Spreadsheet('1Mx0eBR6ze12hRpQI4I7UYFmk2iwIgSlDYgf8gtuNsmU')
 leads = ss2[0]
 rows = leads.getRows()
 
 #Deletes bad leads
 for row in rows:
     for number in row:    
-        if rows[rows.index(row)][4] == 'Bad Lead' or rows[rows.index(row)][4] == 'Duplicate' or rows[rows.index(row)][4] == 'Test Lead':
+        if rows[rows.index(row)][4] == 'Bad Lead' or rows[rows.index(row)][4] == 'Duplicate' or rows[rows.index(row)][4] == 'Test Lead' or rows[rows.index(row)][4] == 'Salon Services':
             #print(row)
             num = rows.index(row)
             rows.pop(num)
@@ -78,10 +78,11 @@ programsClean = ['Program']
 validRows = totalRows - invalidRows
 
 programs = columns[8]
-cosWords = ['Cosmetology', 'cosmetology', 'Makeup Training', 'Barber Training']
-skinWords = ['Esthetics/Skin Care', 'Esthetics']
-nailWords = ['Nail Technology', 'Nail', 'Nail Technician', 'Nails']
-otherWords = ['All Beauty Courses', '']
+cosWords = ['Cosmetology', 'cosmetology', 'Barber Training', 'All Beauty Courses', 'Cos', 'Cosmetololgy', 'Barber Workshop', 'Barber Workshops']
+skinWords = ['Esthetics/Skin Care', 'Esthetics', 'esthetics', 'Esthetcs', 'ESTHETICS']
+nailWords = ['Nail Technology', 'Nail', 'Nail Technician', 'Nails', 'nails', 'NAILS']
+otherWords = ['Teacher Training', 'Teacher Program', 'Advanced Classes', '']
+makeupWords = ['Makeup Training', 'Make-Up Artist Training', 'Makeup', 'Make-up Workshops', 'MUD only']
 i=0
 for entry in programs:
     if i < validRows:
@@ -97,6 +98,9 @@ for entry in programs:
         for x in otherWords:
             if entry == x:
                 programsClean.append('Other')
+        for x in makeupWords:
+            if entry == x:
+                programsClean.append('Makeup')
         i += 1   
 
 columns[10] = programsClean
