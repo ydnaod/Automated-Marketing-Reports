@@ -1,7 +1,8 @@
 import ezsheets
+import re
 
 #import velocify spreadsheet with new leads
-ss2 = ezsheets.Spreadsheet('1t4fH8YRdX19Z2jcCgpPw_MOOQX6egrG9rWgJa_Jzrdg')
+ss2 = ezsheets.Spreadsheet('1614_S8tGTNOhET2tlNB3NejiBZC3jIZmOQrFlN1WyOY')
 leads = ss2[0]
 rows = leads.getRows()
 columns = leads.getColumns()
@@ -35,11 +36,11 @@ programsClean = ['Program']
 validRows = totalRows - invalidRows
 
 programs = columns[8]
-cosWords = ['Cosmetology', 'cosmetology', 'Barber Training', 'All Beauty Courses', 'Cos', 'Cosmetololgy', 'Barber Workshop', 'Barber Workshops']
-skinWords = ['Esthetics/Skin Care', 'Esthetics', 'esthetics', 'Esthetcs', 'ESTHETICS']
-nailWords = ['Nail Technology', 'Nail', 'Nail Technician', 'Nails', 'nails', 'NAILS']
-otherWords = ['Teacher Training', 'Teacher Program', 'Advanced Classes', '']
-makeupWords = ['Makeup Training', 'Make-Up Artist Training', 'Makeup', 'Make-up Workshops', 'MUD only']
+cosWords = ['Cosmetology', 'cosmetology', 'Barber Training', 'All Beauty Courses', 'Cos', 'Cosmetololgy', 'Barber Workshop', 'Barber Workshops', 'Barbering', 'cosmetlogy', 'cosmeetology']
+skinWords = ['Esthetics/Skin Care', 'Esthetics', 'esthetics', 'Esthetcs', 'ESTHETICS', 'esthetic', 'Ethetics', 'esthetician', 'esthetcs']
+nailWords = ['Nail Technology', 'Nail', 'Nail Technician', 'Nails', 'nails', 'NAILS', 'nail', 'nail tech']
+otherWords = ['Teacher Training', 'Teacher Program', 'Advanced Classes', "Teacher's Program", "Cosmetology Teacher", '']
+makeupWords = ['Makeup Training', 'Make-Up Artist Training', 'Makeup', 'Make-up Workshops', 'MUD only', 'makeup', 'MUD']
 i=0
 for entry in programs:
     if i < validRows:

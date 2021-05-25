@@ -1,10 +1,10 @@
 import ezsheets
 
 #import Lead Report Sheer (test)
-leadReport = ezsheets.Spreadsheet('1tCZLsVJ-tEz-5XF6SUpVGq--_SfGTSMvhHTFXlxAOpU')
+leadReport = ezsheets.Spreadsheet('1YjeVMNeHdolHye-RBU3tgzEYBRRbMTXPPGAoydumWVg')
 
 #import velocify spreadsheet with new leads
-ss2 = ezsheets.Spreadsheet('1Mx0eBR6ze12hRpQI4I7UYFmk2iwIgSlDYgf8gtuNsmU')
+ss2 = ezsheets.Spreadsheet('17it5xHPb_-mQn8XeuZ-dZJ7Vvox4i8G0NMhPklL4j20')
 leads = ss2[0]
 rows = leads.getRows()
 
@@ -78,11 +78,11 @@ programsClean = ['Program']
 validRows = totalRows - invalidRows
 
 programs = columns[8]
-cosWords = ['Cosmetology', 'cosmetology', 'Barber Training', 'All Beauty Courses', 'Cos', 'Cosmetololgy', 'Barber Workshop', 'Barber Workshops']
-skinWords = ['Esthetics/Skin Care', 'Esthetics', 'esthetics', 'Esthetcs', 'ESTHETICS']
-nailWords = ['Nail Technology', 'Nail', 'Nail Technician', 'Nails', 'nails', 'NAILS']
-otherWords = ['Teacher Training', 'Teacher Program', 'Advanced Classes', '']
-makeupWords = ['Makeup Training', 'Make-Up Artist Training', 'Makeup', 'Make-up Workshops', 'MUD only']
+cosWords = ['Cosmetology', 'cosmetology', 'Barber Training', 'All Beauty Courses', 'Cos', 'Cosmetololgy', 'Barber Workshop', 'Barber Workshops', 'Barbering', 'cosmetlogy']
+skinWords = ['Esthetics/Skin Care', 'Esthetics', 'esthetics', 'Esthetcs', 'ESTHETICS', 'esthetic']
+nailWords = ['Nail Technology', 'Nail', 'Nail Technician', 'Nails', 'nails', 'NAILS', 'nail', 'nail tech']
+otherWords = ['Teacher Training', 'Teacher Program', 'Advanced Classes', "Teacher's Program", "Cosmetology Teacher", '']
+makeupWords = ['Makeup Training', 'Make-Up Artist Training', 'Makeup', 'Make-up Workshops', 'MUD only', 'makeup', 'MUD']
 i=0
 for entry in programs:
     if i < validRows:
