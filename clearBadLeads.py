@@ -1,7 +1,7 @@
 import ezsheets
 
 #import velocify spreadsheet with new leads
-ss2 = ezsheets.Spreadsheet('1Kge5EN5QRJiPswN9pyGzY3dBNbWQJn2rcVX41_T3jpQ')
+ss2 = ezsheets.Spreadsheet('1ASTJvOInKQze0WGsxde4w4EU-9Ek-wzruCOvvqzDQXY')
 leads = ss2[0]
 rows = leads.getRows()
 columns = leads.getColumns()

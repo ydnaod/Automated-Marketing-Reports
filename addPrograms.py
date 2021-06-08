@@ -2,7 +2,7 @@ import ezsheets
 import re
 
 #import velocify spreadsheet with new leads
-ss2 = ezsheets.Spreadsheet('1Kge5EN5QRJiPswN9pyGzY3dBNbWQJn2rcVX41_T3jpQ')
+ss2 = ezsheets.Spreadsheet('1ASTJvOInKQze0WGsxde4w4EU-9Ek-wzruCOvvqzDQXY')
 leads = ss2[0]
 rows = leads.getRows()
 columns = leads.getColumns()
@@ -38,7 +38,7 @@ validRows = totalRows - invalidRows
 programs = columns[8]
 cosWords = ['Cosmetology', 'cosmetology', 'Barber Training', 'All Beauty Courses', 'Cos', 'Cosmetololgy', 'Barber Workshop', 'Barber Workshops', 'Barbering', 'cosmetlogy', 'cosmeetology']
 skinWords = ['Esthetics/Skin Care', 'Esthetics', 'esthetics', 'Esthetcs', 'ESTHETICS', 'esthetic', 'Ethetics', 'esthetician', 'esthetcs']
-nailWords = ['Nail Technology', 'Nail', 'Nail Technician', 'Nails', 'nails', 'NAILS', 'nail', 'nail tech']
+nailWords = ['Nail Technology', 'Nail', 'Nail Technician', 'Nails', 'nails', 'NAILS', 'nail', 'nail tech', 'Nail Tech']
 otherWords = ['Teacher Training', 'Teacher Program', 'Advanced Classes', "Teacher's Program", "Cosmetology Teacher", '']
 makeupWords = ['Makeup Training', 'Make-Up Artist Training', 'Makeup', 'Make-up Workshops', 'MUD only', 'makeup', 'MUD']
 i=0
